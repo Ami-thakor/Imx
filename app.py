@@ -12,7 +12,21 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>AI Image Enhancer</title>
+    </head>
+    <body>
+        <h2>Upload an Image</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Enhance</button>
+        </form>
+    </body>
+    </html>
+    """
 
 @app.route('/upload', methods=['POST'])
 def upload():
