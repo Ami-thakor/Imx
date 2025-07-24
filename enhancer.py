@@ -10,7 +10,3 @@ def enhance_image(img_path, outpath):
         image.save(f"{outpath}", quality=100)
 
     return outpath
-
-
-if __name__ == "__main__":
-    enhance_image()
